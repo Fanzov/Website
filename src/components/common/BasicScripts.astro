@@ -3,6 +3,10 @@
   document.documentElement.classList.remove('dark');
   localStorage.setItem('theme', 'light');
 
+  // Force primary color to red
+  document.documentElement.style.setProperty('--aw-color-primary', '#b30000');
+  document.documentElement.style.setProperty('--aw-color-secondary', '#cc3333');
+
   // Close mobile nav menu if open
   function closeMenu() {
     document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
@@ -19,8 +23,13 @@
 
   document.addEventListener('astro:after-swap', () => {
     closeMenu();
+
+    // Re-apply colors after page swap
+    document.documentElement.style.setProperty('--aw-color-primary', '#b30000');
+    document.documentElement.style.setProperty('--aw-color-secondary', '#cc3333');
   });
 </script>
+
 
 <script is:inline>
   // Keep intersection animations

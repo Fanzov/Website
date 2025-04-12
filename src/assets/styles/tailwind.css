@@ -1,4 +1,10 @@
+html, body {
+  --aw-color-primary: #b30000 !important;
+  --aw-color-secondary: #cc3333 !important;
+}
+
 :root {
+  
   --aw-color-primary: #b30000;
   --aw-color-secondary: #cc3333;
 }
