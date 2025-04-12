@@ -1,4 +1,6 @@
 ---
+import mdfImage from '~/assets/images/mdf.png';
+
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -7,7 +9,6 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -21,34 +22,33 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 5.0</span> + Tailwind CSS
-    </Fragment>
+   <!-- BELLO -->
+<Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Contact Us',
+      href: '/contact', // ✅ fixed
+      icon: 'tabler:send',
+    },
+    {
+      text: 'View Capabilities',
+      href: '#features',
+    },
+  ]}
+  alt="BELLO MDF Door in Interior"
+>
+  <Fragment slot="title">
+    Industry-Leading <span class="text-primary dark:text-white highlight">MDF Door Manufacturer</span>
+  </Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
-    </Fragment>
-  </Hero>
+  <Fragment slot="subtitle">
+    Over 16 years of experience, trusted by top builders across Georgia, Uzbekistan, and global markets.
+  </Fragment>
+</Hero>
+
+   <!-- BELLO -->
+
 
   <!-- Note Widget ******************* -->
 
@@ -56,344 +56,351 @@ const metadata = {
 
   <!-- Features Widget *************** -->
 
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
+<Features
+  id="features"
+  tagline="Capabilities"
+  title="Why Construction Partners Choose BELLO"
+  subtitle="Precision-built doors, customizable features, and dependable global delivery trusted by builders and distributors."
+  items={[
+    {
+      title: 'Custom Engineering',
+      description: 'Doors tailored to your exact specifications — size, core, hardware, finish, and function.',
+      icon: 'tabler:tool',
+    },
+    {
+      title: 'Reliable Lead Times',
+      description: 'Production and delivery timelines built to meet construction schedules at scale.',
+      icon: 'tabler:calendar-time',
+    },
+    {
+      title: 'Premium-Grade MDF',
+      description: 'Moisture-resistant, warp-free, and sustainably sourced core materials.',
+      icon: 'tabler:layers-intersect',
+    },
+    {
+      title: 'Global Logistics',
+      description: 'Factories in Georgia and Uzbekistan. Delivery to 10+ countries with export-ready packaging.',
+      icon: 'tabler:world',
+    },
+    {
+      title: 'Architectural Aesthetics',
+      description: 'Modern styles that elevate any residential or commercial space.',
+      icon: 'tabler:building-arch',
+    },
+    {
+      title: 'Dedicated Support',
+      description: 'Partnership-focused communication from inquiry to post-installation.',
+      icon: 'tabler:message-chatbot',
+    },
+  ]}
+/>
 
   <!-- Content Widget **************** -->
 
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
+<Content
+  isReversed
+  tagline="Our Foundation"
+  title="Precision Craftsmanship Backed by Scale"
+  items={[
+    {
+      title: 'State-of-the-Art Manufacturing',
+      description:
+        'Two production facilities in Georgia and Uzbekistan with high-capacity automated lines and strict quality control.',
+    },
+    {
+      title: 'Durable & Sustainable Materials',
+      description:
+        'Moisture-resistant MDF and eco-certified woods ensure long-term performance and environmental responsibility.',
+    },
+    {
+      title: 'Built for Architects & Developers',
+      description:
+        'Every product is made to meet the demands of modern construction, from fire-rated doors to architectural styles.',
+    },
+  ]}
+>
+ <Fragment slot="image">
+  <div class="w-full max-w-3xl mx-auto px-4">
+    <img
+      src="/images/hero-bello.jpg"
+      alt="BELLO Factory Overview"
+      class="rounded-xl shadow-lg w-full h-auto object-cover"
+      loading="eager"
+    />
+  </div>
+</Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
-  <!-- Content Widget **************** -->
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Built to Perform. Designed to Impress.
+    </h3>
+    Every BELLO door is the result of engineering excellence, timeless design, and industry-tested materials.
+  </Fragment>
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-gray-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+
 
   <!-- Content Widget **************** -->
 
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+ <Content
+  isAfterContent
+  items={[
+    {
+      title: 'Architect-Grade Aesthetics',
+      description: 'Designed with modern architecture in mind — our doors elevate residential and commercial interiors alike.',
+    },
+    {
+      title: 'Regional Customization',
+      description: 'Choose from fire-rated options, size variations, materials, and finishes based on local code and climate.',
+    },
+    {
+      title: 'Seamless B2B Fulfillment',
+      description: 'Our factory-direct model supports fast lead times, custom packaging, and secure international delivery.',
+    },
+    {
+      title: 'Versatile Applications',
+      description: 'From luxury condos to office buildings — our MDF door collection adapts to your project requirements.',
+    },
+  ]}
+>
+  <Fragment slot="image">
+    <div class="flex justify-center items-center py-10">
+      <img
+        src="/images/customize-door.jpg"
+        alt="Customizable MDF Door"
+        width="1200"
+        height="800"
+        class="rounded-xl shadow-lg w-full max-w-4xl h-auto"
+        loading="eager"
+      />
+    </div>
+  </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <Fragment slot="content">
+    Solutions crafted to meet industry standards, with flexibility to serve every market.
+  </Fragment>
+</Content>
+
+
+  <!-- Content Widget **************** -->
+
+ <Content
+  isReversed
+  isAfterContent
+  items={[
+    {
+      title: 'Premium MDF Door Manufacturing',
+      description:
+        'With over 16 years of experience, BELLO delivers unmatched quality and craftsmanship in every door we produce.',
+    },
+    {
+      title: 'Tailored to Your Vision',
+      description:
+        'From style to specifications, our doors are fully customizable to meet the demands of residential, commercial, and luxury projects.',
+    },
+    {
+      title: 'Reliable Global Supply',
+      description:
+        'With manufacturing hubs in Georgia and Uzbekistan, we ensure fast, consistent delivery to distributors and construction partners worldwide.',
+    },
+    {
+      title: 'Trusted by Top Builders',
+      description:
+        'We are the #1 MDF door supplier in our regions — a reputation built on trust, performance, and long-term partnerships.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/blog-4.JPG',
+    alt: 'Modern white interior MDF door by BELLO',
+  }}
+>
+  <Fragment slot="content">
+    Built for Builders. Trusted Worldwide.
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
+<Steps
+  title="From Concept to Completion – Our 4-Step Door Manufacturing Process"
+  items={[
+    {
+      title: '<span class="font-medium">Step 1: Inquiry & Planning</span>',
+      description: 'You send us your specifications and goals. Our team reviews everything and outlines the best approach.',
+      icon: 'tabler:message',
+    },
+    {
+      title: '<span class="font-medium">Step 2: Design & Customization</span>',
+      description: 'We create detailed drafts, finalize dimensions, materials, finishes, and ensure compliance with project needs.',
+      icon: 'tabler:brush',
+    },
+    {
+      title: '<span class="font-medium">Step 3: Manufacturing & Quality Control</span>',
+      description: 'Production begins at our facilities using advanced CNC machines and strict QA processes for consistency.',
+      icon: 'tabler:settings',
+    },
+    {
+      title: '<span class="font-medium">Ready for Shipment</span>',
+      description: 'Your doors are securely packaged and prepped for pickup or international delivery — ready when you are.',
+      icon: 'tabler:check',
+    },
+  ]}
+  image={{
+    src: mdfImage,
+    alt: 'MDF Door Production at BELLO',
+  }}
+/>
+
+
+
+
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  title="What Makes BELLO Stand Out"
+  subtitle="Our capabilities are designed to serve construction firms, architects, and distributors with precision and scale."
+  tagline="Capabilities"
+  items={[
+    {
+      title: 'Interior & Exterior Door Lines',
+      description: 'Extensive variety of flush, panel, and bi-fold designs for residential and commercial projects.',
+      icon: 'tabler:door',
+    },
+    {
+      title: 'Custom Orders & Fire-Rated Options',
+      description: 'Tailored solutions including fire-rated doors certified for up to 90 minutes and custom hardware.',
+      icon: 'tabler:settings-cog',
+    },
+    {
+      title: 'In-House Manufacturing',
+      description: 'Two cutting-edge facilities in Georgia and Uzbekistan producing over 500,000 doors annually.',
+      icon: 'tabler:building-factory',
+    },
+    {
+      title: 'Logistics & Global Shipping',
+      description: 'Reliable distribution with export packaging and fast turnaround for large-scale contracts.',
+      icon: 'tabler:truck-delivery',
+    },
+    {
+      title: 'Bulk Discounts for B2B Partners',
+      description: 'Volume-based pricing and flexible MOQ programs for construction companies and retailers.',
+      icon: 'tabler:discount-2',
+    },
+    {
+      title: 'Material Innovation',
+      description: 'Premium MDF cores, moisture-resistant coatings, and durable finishes designed for long-term use.',
+      icon: 'tabler:layers-intersect',
+    },
+    {
+      title: 'Design Consultation',
+      description: 'Our in-house experts collaborate with your architects to ensure each door fits your vision.',
+      icon: 'tabler:palette',
+    },
+    {
+      title: 'Multi-Market Experience',
+      description: 'From luxury condos to student housing — we’ve supplied projects in 10+ countries.',
+      icon: 'tabler:world',
+    },
+    {
+      title: 'Dedicated Support Team',
+      description: 'We’re your long-term partner — from quoting and sample review to post-installation follow-ups.',
+      icon: 'tabler:users-group',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Features2>
+
 
   <!-- HighlightedPosts Widget ******* -->
 
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
+ 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
+  <FAQs id="faq"
+  title="Frequently Asked Questions"
+  subtitle="Here are some common questions about our MDF doors, factory capabilities, and partnership opportunities."
+  tagline="FAQs"
+  classes={{ container: 'max-w-6xl' }}
+  items={[
+    {
+      title: 'Where are your factories located?',
+      description:
+        'Our MDF door manufacturing facilities are located in Georgia and Uzbekistan. Both are equipped with state-of-the-art technology and high production capacity for global distribution.',
+    },
+    {
+      title: 'Do you offer custom door designs?',
+      description:
+        'Yes, we can manufacture MDF doors in custom sizes, colors, and finishes tailored to your project requirements. Reach out to our team to begin the design process.',
+    },
+    {
+      title: 'What is your production capacity?',
+      description:
+        'We handle large-scale orders with fast turnaround. Our factories operate at international standards, supplying construction companies and distributors efficiently.',
+    },
+    {
+      title: 'Do you ship internationally?',
+      description:
+        'Yes, we export doors globally. We provide full logistics support and can assist with customs processes in various countries including the U.S., Europe, and Asia.',
+    },
+    {
+      title: 'What materials do you use?',
+      description:
+        'We use high-quality MDF and eco-friendly coatings. Our products meet international durability and safety standards.',
+    },
+    {
+      title: 'How can I become a distributor?',
+      description:
+        'You can fill out our contact form on the website or reach us directly via email or WhatsApp. We’ll guide you through pricing, samples, and partnership setup.',
+    },
+  ]}
+/>
+
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
+<Stats
+  stats={[
+    { title: 'Years of Experience', amount: '16+' },
+    { title: 'Factories Worldwide', amount: '2' },
+    { title: 'Doors Delivered', amount: '500K+' },
+    { title: 'Global Clients', amount: '300+' },
+  ]}
+/>
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+<CallToAction
+actions={[
+  {
+    variant: 'primary',
+    text: 'Contact Now',
+    href: '/contact',
+    target: '_self',
+    icon: 'tabler:mail',
+  },
+]}
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+>
+  <Fragment slot="title">
+    Ready to Partner with <span class="sm:whitespace-nowrap">BELLO?</span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    Connect with us to discuss bulk orders, custom manufacturing, or becoming a distribution partner. <br class="hidden md:inline" />We’re here to help bring your project to life.
+  </Fragment>
+</CallToAction>
 </Layout>
+

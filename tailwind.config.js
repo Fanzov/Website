@@ -37,5 +37,5 @@ export default {
       addVariant('intersect', '&:not([no-intersect])');
     }),
   ],
-  darkMode: 'class',
+  darkMode: 'class', // KEEP this so Tailwind compiles properly
 };

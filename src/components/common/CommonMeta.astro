@@ -1,8 +1,17 @@
 ---
 import { getAsset } from '~/utils/permalinks';
+import { SITE } from 'astrowind:config';
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{SITE?.title || 'BELLO | MDF Doors'}</title>
+<meta name="description" content={SITE?.description || 'Premium MDF Door Manufacturer – Georgia & Uzbekistan'} />
+
+<!-- ✅ Your custom favicon -->
+<link rel="icon" type="image/png" href="/images/Bello-favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/Bello-favicon.png" />
+<link rel="apple-touch-icon" href="/images/Bello-favicon.png" />
 
 <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />

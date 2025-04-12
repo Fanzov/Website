@@ -23,7 +23,39 @@ export interface Props {
   theme?: string;
 }
 
-const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const links: Array<Links> = [
+  {
+    title: 'Company',
+    links: [
+      { text: 'About Us', href: '/about' },
+      { text: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { text: 'Services', href: '/services' },
+    ],
+  },
+];
+
+const secondaryLinks: Array<Link> = [];
+
+const socialLinks: Array<Link> = [
+  {
+    icon: 'tabler:brand-facebook',
+    href: 'https://www.facebook.com/people/BELLO-DOOR/100065620624572/',
+    ariaLabel: 'Facebook',
+  },
+  {
+    icon: 'tabler:mail',
+    href: 'mailto:info@bellodoors.com',
+    ariaLabel: 'Email',
+  },
+];
+
+const footNote = '© 2025 BELLO. All rights reserved.';
+const theme = 'light';
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
@@ -34,7 +66,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
+          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>BELLO LLC.</a>
         </div>
         <div class="text-sm text-muted flex gap-1">
           {
@@ -84,6 +116,8 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                   class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                   aria-label={ariaLabel}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {icon && <Icon name={icon} class="w-5 h-5" />}
                   <Fragment set:html={text} />
@@ -96,9 +130,4 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         )
       }
 
-      <div class="text-sm mr-4 dark:text-muted">
-        <Fragment set:html={footNote} />
-      </div>
-    </div>
-  </div>
-</footer>
+      <div
